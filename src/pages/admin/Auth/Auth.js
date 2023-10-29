@@ -9,21 +9,21 @@ export function Auth() {
   const openLogin = () => setActiveIndex(0);
   const panes = [
     {
-      menuItem: "Entrar",
+      menuItem: "LOG INTO YOUR ADMINISTRATION PANEL",
       render: () => (
         <Tab.Pane>
           <LoginForm />
         </Tab.Pane>
       ),
     },
-    {
-      menuItem: "Nuevo usuario",
+    /* {
+      menuItem: "New User",
       render: () => (
         <Tab.Pane>
           <RegisterForm openLogin={openLogin} />
         </Tab.Pane>
       ),
-    },
+    }, */
   ];
 
   return (

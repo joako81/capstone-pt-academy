@@ -48,20 +48,20 @@ export function ContactForm() {
 
   return (
     <Container className="contact-container">
-      <h4>Contacta con nosotros y te resolveremos cualquier duda que tengas</h4>
+      <h4>Contact us and we will answer any questions you may have.</h4>
 
       <Form onSubmit={formik.handleSubmit}>
         <Form.Group widths="equal">
           <Form.Input
             name="firstname"
-            placeholder="Nombre"
+            placeholder="Name"
             onChange={formik.handleChange}
             value={formik.values.firstname}
             error={formik.errors.firstname}
           />
           <Form.Input
             name="lastname"
-            placeholder="Apellidos"
+            placeholder="Lastname"
             onChange={formik.handleChange}
             value={formik.values.lastname}
             error={formik.errors.lastname}
@@ -70,7 +70,7 @@ export function ContactForm() {
 
         <Form.Input
           name="email"
-          placeholder="Correo electrónico"
+          placeholder="Email"
           onChange={formik.handleChange}
           value={formik.values.email}
           error={formik.errors.email}
@@ -78,17 +78,17 @@ export function ContactForm() {
 
         <Form.TextArea
           name="message"
-          placeholder="Mensaje"
+          placeholder="Write us your message here"
           onChange={formik.handleChange}
           value={formik.values.message}
           error={formik.errors.message}
         />
 
         <Form.Button name="submit" primary fluid loading={formik.isSubmitting}>
-          !Solicita Información!
+          Ask for information!
         </Form.Button>
         {success && (
-          <p className="success">¡Tu mensaje se envió correctamente!</p>
+          <p className="success">Your message was sent successfully!!</p>
         )}
       </Form>
     </Container>
