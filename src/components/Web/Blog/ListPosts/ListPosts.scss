@@ -1,0 +1,34 @@
+@import "~/src/scss/index.scss";
+
+.list-posts-blog {
+  margin-top: 70px;
+
+  .ui.image {
+    object-fit: cover;
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .item {
+    width: 33.33%;
+    padding: 20px;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  a {
+    color: $text-light !important;
+    opacity: 0.9;
+    &.active {
+      opacity: 1;
+      border-color: $text-light !important;
+    }
+  }
+}

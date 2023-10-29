@@ -1,0 +1,22 @@
+@import "~/src/scss/index.scss";
+
+.footer-info {
+  width: 33.33%;
+  color: $text-light;
+
+  .logo {
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  p {
+    margin: 20px 20px;
+    color: $text-light;
+    opacity: 0.6;
+  }
+
+  .social-media {
+    opacity: 0.6;
+  }
+}

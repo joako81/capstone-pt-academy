@@ -1,0 +1,83 @@
+@import "~/src/scss/index.scss";
+
+.course-item-web {
+  color: $text-light;
+
+  &-title {
+    padding-top: 50px;
+    font-size: 50px;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0px 37px 73px 30px;
+  }
+
+  .course-item-web-left {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .course-item-web-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .course-item-web-image {
+      width: 75%;
+    }
+
+    .course-item-web-content {
+      p {
+        margin-top: 50px;
+      }
+      .Image {
+        width: 50%;
+        line-height: 1.5;
+      }
+      > .pttitle {
+        font-weight: bold;
+        margin-top: 35px;
+        text-align: center;
+        font-size: 45px;
+        margin-bottom: 20px;
+      }
+      text-align: justify;
+      font-size: 20px;
+      line-height: 1.8;
+      opacity: 0.8;
+    }
+  }
+
+  .course-item-web-right {
+    flex: 0 0 20.3%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .course-item-web-right-options {
+      display: flex;
+      flex-direction: column;
+      font-weight: bold;
+      line-height: 1.5;
+      font-size: 30px;
+      margin-bottom: 50px;
+
+      .course-item-web-right-options-price {
+        span {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          line-height: 1.5;
+        }
+
+        > .price {
+          animation: changeColor 5s infinite; /* Aplica la animación al elemento span */
+        }
+        > .score {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

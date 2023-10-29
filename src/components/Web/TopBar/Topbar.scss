@@ -1,0 +1,61 @@
+@import "~/src/scss/index.scss";
+.top-bar {
+  height: 150px;
+
+  > .ui.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &-left {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .logo {
+      height: 100%;
+      > svg {
+        height: 100%;
+      }
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 50px;
+      font-size: 20px;
+
+      a {
+        margin: 0 25px;
+        color: $text-light;
+        &.active {
+          color: $primary-hover;
+          text-decoration: underline;
+          font-weight: bold;
+        }
+        &:hover {
+          color: $text-hover;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .social-media {
+    > .ui.button {
+      color: white;
+      background-color: black;
+      margin: -59px -57px 0 0;
+      background: none;
+      font-size: 25px;
+
+      &:hover {
+        background: none !important;
+        background-color: none;
+      }
+    }
+  }
+}

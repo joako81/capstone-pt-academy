@@ -1,0 +1,7 @@
+@import "~/src/scss/index.scss";
+
+.about-page {
+  > p {
+    color: $text-light;
+  }
+}

@@ -1,0 +1,75 @@
+$primary: #000000;
+$secundary: #ffed18;
+$primary-hover: #d4af35;
+$third: black;
+
+//TODO PONER TEXTO BOTÓN EN NEGRO, CAMBIOS THIRD Y TEXT BUTTON VER COMO HACERLO
+
+//text
+$text-light: #fff;
+$text-hover: #d4af37;
+$text-button: black;
+
+//Background
+$background-dark: #000000;
+$background-grey: #f0f3f4;
+$background-dark-web: #020202;
+$background-dark-web-contact: #ffed18;
+
+//border
+$border-grey: #808080;
+
+//status
+$success: #84b84c;
+$error: #9f3a38;
+
+//social color
+$youtube: #cd201f;
+$twitter: #1da1f2;
+$facebook: #3b5998;
+$linkedin: #0077b5;
+
+.ui.primary.button {
+  background-color: #ffed18;
+  color: black;
+  text-shadow: none;
+  background-image: none;
+
+  &:hover {
+    background-color: #d4af37;
+  }
+}
+
+.ui.third.button {
+  background-color: rgb(0, 60, 255);
+  color: white;
+  text-shadow: none;
+  background-image: none;
+
+  &:hover {
+    background-color: #d4af37;
+  }
+}
+
+.social-media {
+  > .ui.button {
+    color: white;
+    background-color: black;
+    margin: -59px -57px 0 0;
+    background: none;
+    font-size: 25px;
+  }
+}
+
+//animación colores
+@keyframes changeColor {
+  0% {
+    color: #fff;
+  }
+  50% {
+    color: #d4af37;
+  }
+  100% {
+    color: #fff;
+  }
+}

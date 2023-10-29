@@ -1,0 +1,26 @@
+.contact-container {
+  margin-top: 100px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  background-color: #ffffff;
+
+  > h4 {
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+  }
+  &.ui.container {
+    margin: 50px;
+  }
+  .contact-container .input,
+  .contact-container .button {
+    margin-bottom: 20px;
+  }
+
+  .success {
+    text-align: center;
+  }
+}

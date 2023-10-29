@@ -1,0 +1,20 @@
+@import "~/src/scss/index.scss";
+
+.footer-newsletter {
+  width: 33.33%;
+  margin-right: -40px;
+  margin-left: 40px;
+
+  > h4 {
+    color: $text-light;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .success {
+    color: $success;
+    text-align: center;
+    font-size: 14px;
+  }
+}

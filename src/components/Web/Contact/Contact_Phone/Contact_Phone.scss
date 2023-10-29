@@ -1,0 +1,62 @@
+@import "~/src/scss/index.scss";
+
+.contact-phone {
+  background-color: $primary-hover;
+  background-size: cover;
+  background-image: url("../../../../assets/jpg/weightlift.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  position: relative;
+
+  &-dark {
+    background-color: $background-dark-web-contact;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1 {
+    color: $text-button;
+    text-align: center;
+    font-size: 45px;
+    font-weight: bolder;
+    line-height: 55px;
+    z-index: 1;
+    margin-top: 20px;
+  }
+
+  p {
+    color: $text-button;
+    font-weight: 500;
+    font-size: 25px;
+    margin-bottom: 35px;
+    z-index: 1;
+  }
+
+  a {
+    color: rgb(49, 41, 3);
+
+    &:hover {
+      color: whitesmoke;
+    }
+
+    .icon {
+      margin-left: 10px;
+    }
+  }
+
+  .style-direction {
+    display: flex;
+  }
+  // TODO CAMBIAR FONDO DIFUMINADO COMO BANNER MIRAR
+}

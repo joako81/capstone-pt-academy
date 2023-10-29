@@ -1,0 +1,38 @@
+@import "~/src/scss/index.scss";
+
+.footer-menu {
+  width: 33.33%;
+
+  > h4 {
+    color: $text-light;
+    display: flex;
+    justify-content: center;
+    opacity: 0.6;
+  }
+
+  .ui.grid {
+    height: 100%;
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: -20px;
+    }
+
+    a {
+      color: $text-light !important;
+      opacity: 0.6;
+      &:hover {
+        color: $text-hover !important;
+      }
+    }
+
+    p {
+      color: $text-light !important;
+      opacity: 0.9 !important;
+      text-align: justify !important;
+      margin-bottom: -10px;
+    }
+  }
+}
