@@ -9,24 +9,30 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@tinymce/tinymce-react": "4.2.0",
-    
+    "axios": "^1.6.2",
     "draft-js": "^0.11.7",
     "emailjs-com": "^3.2.0",
+    "firebase": "^10.5.2",
     "formik": "2.2.9",
     "jwt-decode": "^3.1.2",
     "lodash": "^4.17.21",
     "luxon": "^3.4.3",
     "node-sass": "6.0.1",
     "react": "^18.2.0",
+    "react-csv": "^2.2.2",
     "react-dom": "^18.2.0",
     "react-draft-wysiwyg": "^1.15.0",
     "react-dropzone": "^14.2.3",
     "react-hook-form": "^7.47.0",
     "react-html-parser": "^2.0.2",
     "react-infinite-scroll-component": "^6.1.0",
+    "react-query": "^3.39.3",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
     "react-stars": "^2.2.5",
+    "react-truncate": "^2.4.0",
+    "react-truncate-markup": "^5.1.2",
     "sass": "^1.69.4",
     "scss": "^0.2.4",
     "semantic-ui-css": "^2.5.0",
@@ -60,5 +66,6 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
-  }
+  },
+  "homepage": "https://pt-academy.netlify.app/"
 }

@@ -5,22 +5,21 @@
 
   .ui.image {
     object-fit: cover;
+    width: 550px;
+    height: 250px;
   }
 
   .list {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
   }
 
   .item {
-    width: 33.33%;
-    padding: 20px;
-  }
-
-  .pagination {
     display: flex;
-    justify-content: center;
-    margin-top: 30px;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
   }
 
   a {
@@ -29,6 +28,40 @@
     &.active {
       opacity: 1;
       border-color: $text-light !important;
+    }
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 2400px) {
+  .list-posts-blog {
+    margin-top: 70px;
+
+    .ui.image {
+      object-fit: cover;
+      width: 550px;
+      height: 250px;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 20px;
+    }
+
+    a {
+      color: $text-light !important;
+      opacity: 0.9;
+      &.active {
+        opacity: 1;
+        border-color: $text-light !important;
+      }
     }
   }
 }

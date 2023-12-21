@@ -26,3 +26,23 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .menu-item {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &-info {
+      text-align: center;
+      max-width: 100%;
+
+      &-title,
+      &-path {
+        max-width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+  }
+}

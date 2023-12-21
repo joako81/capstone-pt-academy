@@ -21,7 +21,7 @@ export function CoursePage() {
         console.error(error);
       }
     })();
-  }, [path]);
+  }, [path, course]);
 
   return (
     <Container>

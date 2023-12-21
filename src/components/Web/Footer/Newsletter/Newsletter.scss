@@ -18,3 +18,18 @@
     font-size: 14px;
   }
 }
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .footer-newsletter {
+    margin-top: 15px;
+    margin-right: 0;
+    margin-left: 0;
+    width: 50%;
+  }
+  .ui.group {
+    flex-direction: column;
+    .ui.input {
+      flex: 1;
+    }
+  }
+}

@@ -9,3 +9,32 @@
     }
   }
 }
+@media screen and (max-width: 768px) {
+  .users-page {
+    .users-page-add {
+      position: static;
+      right: 0;
+      top: 0;
+
+      > .ui.button {
+        margin: 0;
+      }
+    }
+    .ui.tab .menu {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ui.secondary.menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      a {
+        margin: 5px;
+      }
+      > .ui.button {
+        order: 1;
+      }
+    }
+  }
+}

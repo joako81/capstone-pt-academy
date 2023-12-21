@@ -103,7 +103,7 @@ export class Auth {
       const refreshToken = this.getRefreshToken();
       const result = await this.refreshAccesToken(refreshToken);
 
-      // Almacenar el nuevo token de acceso
+      // Almacena el nuevo token de acceso
       this.setAccessToken(result.accessToken);
     }
   }

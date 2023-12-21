@@ -8,13 +8,12 @@
     font-size: 30px;
     text-transform: uppercase;
     color: $text-light;
-    margin: 0;
   }
 
   > h4 {
     color: $text-light;
     font-weight: 100;
-    margin: 0;
+
     text-align: center;
     font-size: 14px;
     opacity: 0.6;
@@ -37,7 +36,6 @@
         border-radius: 10px;
 
         i {
-          margin: 0;
           font-size: 40px;
         }
 
@@ -50,6 +48,28 @@
           font-size: 12px;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .how-my-courses-work {
+    width: 100vw;
+    padding: 0 10px;
+
+    div {
+      width: 84.33%;
+      margin-left: 13.1px;
+    }
+
+    .how-my-courses-work-items {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      font-size: 20px;
+      flex: 1 0 75%;
     }
   }
 }

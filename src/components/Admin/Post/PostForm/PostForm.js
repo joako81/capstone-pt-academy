@@ -78,7 +78,7 @@ export function PostForm(props) {
       </Form.Group>
 
       <Editor
-        apiKey="deklomkimbltpvm71pkw2lab98dlzvvubl3ono5iyxlmyoi3" //no actualiza foto
+        apiKey="deklomkimbltpvm71pkw2lab98dlzvvubl3ono5iyxlmyoi3"
         init={{
           height: 400,
           menubar: true,
@@ -91,7 +91,7 @@ export function PostForm(props) {
             "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help",
         }}
         initialValue={formik.values.content}
-        onChange={(e) => formik.setFieldValue("content", e.target.getContent())} //si funciona mal onblur poner onChange
+        onChange={(e) => formik.setFieldValue("content", e.target.getContent())}
       />
 
       <div className="post-form-miniature" {...getRootProps()}>

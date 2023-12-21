@@ -5,6 +5,7 @@ import {
   HomeCourses,
   HowMyCoursesWork,
   Reviews,
+  CarouselComponent,
 } from "../../../components/Web/";
 
 export function Home() {
@@ -15,6 +16,7 @@ export function Home() {
         <HomeCourses />
         <HowMyCoursesWork />
         <Reviews />
+        <CarouselComponent />
       </h1>
     </div>
   );

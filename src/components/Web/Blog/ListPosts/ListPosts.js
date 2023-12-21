@@ -1,69 +1,77 @@
 import React, { useState, useEffect } from "react";
-import { Loader, Pagination } from "semantic-ui-react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { Loader } from "semantic-ui-react";
 import { map } from "lodash";
 import { ListPostItem } from "../ListPostItem";
 import { Post } from "../../../../api";
+import { useInfiniteQuery } from "react-query";
 
 import "./ListPosts.scss";
 
 const postController = new Post();
 
 export function ListPosts() {
-  const [posts, setPosts] = useState(null);
-  const [searchParams] = useSearchParams();
-  const [pagination, setPagination] = useState();
-  const [page, setPage] = useState(searchParams.get("page") || 1);
+  const [loading, setLoading] = useState(false);
 
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await postController.getPosts(page); //cambiamos el 1 para poner el límite de articulos gitde paginación
-        setPosts(response.docs);
-
-        setPagination({
-          limit: response.limit,
-          page: response.page,
-          pages: response.pages,
-          total: response.total,
-        });
-      } catch (error) {
-        console.error(error);
-      }
-    })();
-  }, [page]);
-
-  const changePage = (_, data) => {
-    const newPage = data.activePage;
-    setPage(newPage, true);
-    navigate(`?page=${newPage}`);
+  const fetchPosts = async ({ pageParam = 1 }) => {
+    setLoading(true);
+    const response = await postController.getPosts(pageParam);
+    setLoading(false);
+    const result = {
+      posts: response.docs,
+      nextPage: response.docs.length > 0 ? pageParam + 1 : undefined,
+    };
+    /* console.log(result);  */
+    return result;
   };
 
-  if (!posts) return <Loader active inline="centered" />;
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    useInfiniteQuery(
+      "posts",
+      ({ pageParam = 1 }) => fetchPosts({ pageParam }),
+      {
+        getNextPageParam: (lastPage) => lastPage.nextPage,
+      }
+    );
+
+  useEffect(() => {
+    const handleScroll = () => {
+      /* console.log("Scroll event triggered");  */
+      if (
+        document.documentElement.scrollHeight - window.innerHeight <=
+        document.documentElement.scrollTop
+      ) {
+        if (loading) return;
+        if (!hasNextPage) return;
+        if (isFetchingNextPage) return;
+
+        const scrollPosition = document.documentElement.scrollTop;
+
+        fetchNextPage().then(() => {
+          /* console.log("Next page fetched");  */
+          setTimeout(() => {
+            window.scrollTo(0, scrollPosition);
+          }, 0);
+        });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [loading, hasNextPage, fetchNextPage, isFetchingNextPage]);
+
+  if (!data || loading) return <Loader active inline="centered" />;
 
   return (
     <div className="list-posts-blog">
       <div className="list">
-        {map(posts, (post) => (
-          <div dey={post._id} className="item">
-            <ListPostItem post={post} />
-          </div>
-        ))}
-      </div>
-
-      <div className="pagination">
-        <Pagination
-          defaultActivePage={pagination.page}
-          totalPages={pagination.pages}
-          ellipsisItem={null}
-          firstItem={null}
-          lastItem={null}
-          secondary
-          pointing
-          onPageChange={changePage}
-        />
+        {map(data.pages, (page) =>
+          map(page.posts, (post) => (
+            <div key={post._id} className="item">
+              <ListPostItem post={post} />
+            </div>
+          ))
+        )}
       </div>
     </div>
   );

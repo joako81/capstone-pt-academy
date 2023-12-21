@@ -3,8 +3,6 @@ import { Grid, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./Menu.scss";
 
-//grid column ={número columnas}
-
 export function Menu() {
   return (
     <div className="footer-menu">
@@ -25,15 +23,6 @@ export function Menu() {
           <Link to="/blog">
             <Icon name="blogger b" /> Blog
           </Link>
-          {/*   <Link to="/contact">
-            <Icon name="mail" /> Write us to our e-mail
-          </Link>
-          <Link to="tel:+34665344363">
-            <Icon name="phone volume" /> Call us!
-          </Link>
-          <Link to="https://api.whatsapp.com/send/?phone=665344363&text=Hello%21&type=phone_number&app_absent=0">
-            <Icon name="whatsapp" /> Contact by whatsapp
-          </Link> */}
         </Grid.Column>
 
         <Grid.Column>

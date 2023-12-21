@@ -4,3 +4,4 @@ export * from "./menu";
 export * from "./course";
 export * from "./newsletter";
 export * from "./blog";
+export * from "./mailerLiteApi";

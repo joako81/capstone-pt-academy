@@ -5,7 +5,6 @@ import { Menu } from "../../../../api";
 import { useAuth } from "../../../../hooks";
 import { MenuForm } from "../MenuForm";
 import "./MenuItem.scss";
-import { blue } from "@mui/material/colors";
 
 const menuController = new Menu();
 

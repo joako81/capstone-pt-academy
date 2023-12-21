@@ -1,7 +1,5 @@
 import * as Yup from "yup";
 
-// contactform.form.js
-
 export function initialValues() {
   return {
     lastname: "",

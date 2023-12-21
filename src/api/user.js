@@ -62,7 +62,6 @@ export class User {
         method: "GET",
         headers: {
           Authorization: `Bearer ${accessToken}`,
-          //accept: "application/json", //incluyo fuera código por el error que me daba tener cuidado por si afecta a avatar
         },
       };
 

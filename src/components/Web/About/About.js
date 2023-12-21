@@ -17,6 +17,7 @@ export function About() {
             alt="Instructor talking students"
           />
           <p>
+            <br></br>
             Founded in 2009, PT Academy was, and still is, the only fitness
             education company to use active personal trainers as part of its
             expert delivery team. From the beginning, our philosophy has always

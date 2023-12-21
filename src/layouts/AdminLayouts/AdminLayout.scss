@@ -11,6 +11,7 @@ $widthLeftMenu: 200px;
   &-left {
     background-color: black;
     width: $widthLeftMenu;
+    flex: 1 0 auto;
 
     .logo {
       height: 150px;
@@ -35,5 +36,50 @@ $widthLeftMenu: 200px;
       position: relative;
       margin: 20px;
     }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  $widthLeftMenu: 125px;
+  .admin-layout {
+    display: flex;
+    min-height: 100vh;
+    max-height: 100vh;
+    background-color: $background-grey;
+
+    &-left {
+      height: 195vw;
+      background-color: black;
+      width: $widthLeftMenu;
+      flex: 1 0 auto;
+
+      .logo {
+        height: 75px;
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+
+    &-right {
+      width: calc(100% - $widthLeftMenu);
+
+      &-header {
+        background-color: black;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 10px;
+      }
+
+      &-content {
+        position: relative;
+        margin: 20px;
+      }
+    }
+  }
+
+  .ui.button {
+    margin-top: 10px;
   }
 }

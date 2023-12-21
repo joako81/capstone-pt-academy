@@ -59,7 +59,7 @@ export function PostItem(props) {
       <BasicModal
         show={showModal}
         close={onOpenCloseModal}
-        title={`Edita el post: ${post.title}`}
+        title={`Update post: ${post.title}`}
         size="large"
       >
         <PostForm onClose={onOpenCloseModal} onReload={onReload} post={post} />
@@ -69,7 +69,7 @@ export function PostItem(props) {
         open={showConfirm}
         onCancel={onOpenCloseConfirm}
         onConfirm={onDelete}
-        content={`¿Eliminar ${post.title}?`}
+        content={`Delete ${post.title}?`}
         size="mini"
       />
     </>

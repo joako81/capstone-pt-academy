@@ -2,8 +2,7 @@ export const socialData = [
   {
     type: "twitter",
     link: "https://twitter.com/ptacademy",
-    icon: "twitter",
-    // Usar el nombre correcto del ícono de Twitter
+    icon: "x",
   },
   {
     type: "facebook",

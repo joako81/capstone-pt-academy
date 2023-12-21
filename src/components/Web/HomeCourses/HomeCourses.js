@@ -36,7 +36,7 @@ export function HomeCourses() {
             rel="noopener noreferrer"
           >
             <Image src={`${ENV.BASE_PATH}/${course.miniature}`} />
-            <div>
+            <div className="home-courses-list-text">
               <span>{course.title}</span>
               <span dangerouslySetInnerHTML={{ __html: course?.description }} />
             </div>

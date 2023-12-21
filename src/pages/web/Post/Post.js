@@ -15,7 +15,7 @@ export function Post() {
   useEffect(() => {
     (async () => {
       try {
-        const response = await postController.getPostItem(path);
+        const response = await postController.getPostItem(path, { limit: 5 });
         /*      console.log("response", response); */
         setPost(response);
       } catch (error) {

@@ -37,11 +37,14 @@ export function UserForm(props) {
     },
   });
 
-  const onDrop = useCallback((acceptedFiles) => {
-    const file = acceptedFiles[0];
-    formik.setFieldValue("avatar", URL.createObjectURL(file));
-    formik.setFieldValue("fileAvatar", file);
-  }, []);
+  const onDrop = useCallback(
+    (acceptedFiles) => {
+      const file = acceptedFiles[0];
+      formik.setFieldValue("avatar", URL.createObjectURL(file));
+      formik.setFieldValue("fileAvatar", file);
+    },
+    [formik]
+  );
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: "image/jpeg, image/png",

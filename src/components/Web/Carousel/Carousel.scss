@@ -1,0 +1,95 @@
+@import "../../../../src/scss/index.scss";
+
+.carousel_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  margin-bottom: 30px;
+
+  .carousel_title {
+    color: $text-hover;
+    margin-top: -10px;
+    margin-bottom: 45px;
+    h1 {
+      font-size: 60px;
+    }
+  }
+}
+
+.carousel_wrapper {
+  height: 150px;
+  width: 20%;
+  align-items: center;
+}
+
+.carousel_wrapper .img {
+  height: 50px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.carousel_wrapper .carousel-slider {
+  height: 200px;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel_container {
+    height: 60vh;
+  }
+
+  .carousel_title {
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    h1 {
+      font-size: 40px;
+    }
+  }
+
+  .carousel_wrapper {
+    height: 100px;
+    width: 40%;
+  }
+
+  .carousel_wrapper .img {
+    height: 50px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .carousel_wrapper .carousel-slider {
+    height: 100px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .carousel_container {
+    height: 65vh;
+  }
+
+  .carousel_title {
+    margin-top: -5px;
+    margin-bottom: 35px;
+
+    h1 {
+      font-size: 45px;
+    }
+  }
+
+  .carousel_wrapper {
+    height: 140;
+    width: 20%;
+  }
+
+  .carousel_wrapper .img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .carousel_wrapper .carousel-slider {
+    height: 110px;
+  }
+}

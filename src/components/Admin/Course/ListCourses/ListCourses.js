@@ -36,7 +36,7 @@ export function ListCourses(props) {
 
   const changePage = (_, data) => {
     if (size(courses) === 0 && data.activePage > 1) {
-      // Si no hay cursos en la página actual y no es la primera página,
+      // cONDICIÓN Si no hay cursos en la página actual y no es la primera página,
       // volvemos a la página anterior
       setPage(data.activePage - 1);
     } else {

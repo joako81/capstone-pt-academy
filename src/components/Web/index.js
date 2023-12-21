@@ -6,3 +6,4 @@ export * from "./HowMyCoursesWork";
 export * from "./Reviews";
 export * from "./Courses";
 export * from "./About";
+export * from "./Carousel";

@@ -5,6 +5,8 @@ import { map, size } from "lodash";
 import { useAuth } from "../../../../hooks";
 import { EmailItem } from "../EmailItem";
 import "./ListEmails.scss";
+import { CSVLink } from "react-csv";
+import mailerLite from "../../../../api/mailerLiteApi";
 
 const newsletterController = new Newsletter();
 
@@ -41,11 +43,31 @@ export function ListEmails() {
     setPage(data.activePage);
   };
 
+  const data = emails ? emails.map((email) => [email.email]) : [];
+
   if (!emails) return <Loader active inline="centered" />;
   if (size(emails) === 0) return "No hay emails registrados";
 
+  mailerLite
+    .post(`/groups/${108004927724324789}/subscribers`, {
+      email: "new_subscriber@example.com",
+    })
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
   return (
     <div className="list-emails">
+      <CSVLink
+        data={data}
+        filename={"emails-newsletter.csv"}
+        className="btn-download"
+      >
+        Download CSV - Newsletter - Email
+      </CSVLink>
       {map(emails, (email) => (
         <EmailItem key={email._id} email={email} onReload={onReload} />
       ))}

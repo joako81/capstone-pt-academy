@@ -11,8 +11,7 @@ import "./Courses.scss";
 const courseController = new Course();
 
 export function Courses() {
-  const [courses, setCourses] = useState(null);
-
+  const [courses, setCourses] = useState([]);
   const [pagination, setPagination] = useState(null);
   const [page, setPage] = useState(1);
   const isCurrentLastPage = pagination?.page === pagination?.pages;
@@ -26,13 +25,12 @@ export function Courses() {
           pages: response.pages,
         });
 
-        if (!courses) setCourses(response.docs);
-        else setCourses([...courses, ...response.docs]);
+        setCourses((prevCourses) => [...prevCourses, ...response.docs]);
       } catch (error) {
         console.error(error);
       }
     })();
-  }, [page]); // Removido 'courses' de las dependencias
+  }, [page]);
 
   const loadMore = () => {
     if (!isCurrentLastPage) {
@@ -59,10 +57,10 @@ export function Courses() {
           of NCFE and YMCA Awards. NCFE is the UK’s oldest established awarding
           organisation tracking over 160 years. YMCA Awards (formerly CYQ) is
           probably the most established fitness awarding organisation spanning
-          over 25 years. Choose from over 200 towns and cities to study in.
-          Learners have the choice of doing the assessments 1 to 1 with a mentor
-          at the mentors venue or at our designated assessment days which are
-          held nationwide.
+          25 years. Choose from over 200 towns and cities to study in. Learners
+          have the choice of doing the assessments 1 to 1 with a mentor at the
+          mentors venue or at our designated assessment days which are held
+          nationwide.
         </p>
       </h2>
       <div className="courses">

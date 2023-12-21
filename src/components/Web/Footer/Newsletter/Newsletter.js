@@ -1,8 +1,11 @@
+// Newsletter.js
+
 import React, { useState } from "react";
 import { Form } from "semantic-ui-react";
 import { useFormik } from "formik";
 import { Newsletter as NewsletterController } from "../../../../api";
 import { validationSchema, initialValues } from "./Newsletter.form";
+import axios from "axios";
 
 import "./Newsletter.scss";
 
@@ -10,6 +13,19 @@ const newsletterController = new NewsletterController();
 
 export function Newsletter() {
   const [success, setSuccess] = useState(false);
+
+  const addEmailToMailerLite = async (email) => {
+    try {
+      const response = await axios.get(
+        `/.netlify/functions/addEmailToMailerLite?email=${encodeURIComponent(
+          email
+        )}`
+      );
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const formik = useFormik({
     initialValues: initialValues(),
@@ -30,9 +46,19 @@ export function Newsletter() {
           email: formattedEmail,
         };
 
+        console.log(formattedFormValue);
+
         await newsletterController.registerEmail(formattedFormValue);
+        console.log("Email registered");
+
+        addEmailToMailerLite(formattedEmail);
+        console.log("Email added to MailerLite");
+
         formik.resetForm();
+        console.log("Form reset");
+
         setSuccess(true);
+        console.log("Success set to true");
       } catch (error) {
         console.error(error);
       }
@@ -79,3 +105,5 @@ export function Newsletter() {
     </div>
   );
 }
+
+//probar en live porque me da error api

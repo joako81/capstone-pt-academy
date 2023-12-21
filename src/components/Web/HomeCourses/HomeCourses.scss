@@ -12,7 +12,6 @@
   &-list {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -10px;
 
     > a {
       width: 50%;
@@ -61,6 +60,76 @@
 
     > .ui.button {
       width: 200px;
+    }
+  }
+}
+
+@media screen and (max-width: 559px) {
+  .home-courses {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .ui.image {
+      height: 136px;
+      width: 158px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    .home-courses-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px 0;
+    }
+    .home-courses-list a {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px 0;
+    }
+  }
+}
+
+@media screen and (min-width: 560px) and (max-width: 768px) {
+  .home-courses {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .ui.image {
+      height: 136px;
+      width: 158px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    .home-courses-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px 0;
+    }
+    .home-courses-list a {
+      width: 65%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px 0;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .home-courses {
+    .home-courses-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 }

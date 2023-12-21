@@ -50,7 +50,7 @@ export function EmailItem(props) {
         open={showConfirm}
         onCancel={onOpenCloseConfirm}
         onConfirm={onDelete}
-        content={`Eliminar al usuario: ${email.firstname} ${email.lastname} con email: ${email.email}`}
+        content={`Delete User: ${email.firstname} ${email.lastname} with email: ${email.email}`}
       />
     </>
   );
